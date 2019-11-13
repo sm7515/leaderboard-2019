@@ -7,6 +7,7 @@ import DisplayOtherFivePlayer from '../components/displayPlayers_others'
 export default function Home(params) {
 
     const [topTen, setTopTen]=useState([]);
+    const [refresh, setRefresh]=useState(false);
 
     const getPlayer=()=>axois.get('https://game-night-management.herokuapp.com/topplayers')
         .then(res=>{
@@ -15,7 +16,9 @@ export default function Home(params) {
         .catch(err=>console.log(err));
 
     useEffect(()=>{
-        getPlayer();
+        setInterval(() => {
+            getPlayer();
+        }, 3000);
     },[])
 
     const renderTopFivePlayer=()=>{
@@ -45,6 +48,10 @@ export default function Home(params) {
                 score={player.chips}
             />
         })
+    }
+
+    function refreshPage() {
+        window.location.reload(false);
     }
     
     return(
