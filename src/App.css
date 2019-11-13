@@ -1,14 +1,14 @@
 .container{
   align-items: center;
   justify-content: center;
-font-family: 'Bodoni MT', serif;
+  font-family: 'Bodoni MT', serif;
 }
 
 .background-video{
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   z-index: -100;
 }
@@ -22,8 +22,15 @@ font-family: 'Bodoni MT', serif;
   color: white;
 }
 
+.nickname{
+  font-size: 30px;
+}
+
+.score{
+  font-size: 30px;
+}
+
 .topFiveContainer{
-  font-size: 23px;
   text-align: center;
   display: block;
 }
@@ -37,11 +44,11 @@ font-family: 'Bodoni MT', serif;
 }
 
 .top2{
-  width: 16%;
+  width: 18%;
 }
 
 .top3{
-  width: 16%;
+  width: 18%;
 }
 
 .top4{
@@ -55,7 +62,7 @@ font-family: 'Bodoni MT', serif;
 .topOtherContainer{
   display: block;
   text-align: center;
-  font-size: 23px;
+  font-size: 30px;
   margin-top: 5%;
 }
 

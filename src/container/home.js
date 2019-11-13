@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axois from 'axios';
-import bgvideo from '../visuals/gameboard_bg.mp4'
 import DisplayTopFivePlayer from '../components/displayPlayers_top5'
 import DisplayOtherFivePlayer from '../components/displayPlayers_others'
 
 export default function Home(params) {
 
     const [topTen, setTopTen]=useState([]);
-    const [refresh, setRefresh]=useState(false);
 
     const getPlayer=()=>axois.get('https://game-night-management.herokuapp.com/topplayers')
         .then(res=>{
@@ -18,7 +16,7 @@ export default function Home(params) {
     useEffect(()=>{
         setInterval(() => {
             getPlayer();
-        }, 3000);
+        }, 1000);
     },[])
 
     const renderTopFivePlayer=()=>{
@@ -39,7 +37,6 @@ export default function Home(params) {
     }
 
     const renderOtherPlayer=()=>{
-        console.log(topTen);
         return topTen.slice(5, 10).map((player, index) => {
             return <DisplayOtherFivePlayer
                 key={index}
@@ -50,14 +47,10 @@ export default function Home(params) {
         })
     }
 
-    function refreshPage() {
-        window.location.reload(false);
-    }
-    
     return(
         <div className='container'>
             <video className="background-video" muted loop autoPlay>
-                <source src={bgvideo} type="video/mp4" />
+                <source src={process.env.PUBLIC_URL + '/visuals/gameboard_bg.mp4'} type="video/mp4" />
             </video>
             <div className="players playerInfo">
                 {renderTopFivePlayer()}
