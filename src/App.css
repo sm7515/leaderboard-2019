@@ -1,22 +1,65 @@
 .container{
   align-items: center;
   justify-content: center;
-	font-family: 'Bodoni MT,Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif'; 
+  font-family: 'Bodoni MT,Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif'; 
 }
 
 .background-video{
   position: fixed;
-  right: 0;
-  bottom: 0;
-  min-height: 100%;
-  min-width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
   z-index: -100;
+}
+
+.players{
+  text-align: center;
+  margin-top: 26%;
 }
 
 .playerInfo{
   color: white;
 }
 
-.rank.topFive{
-  display: none;
+.topFiveContainer{
+  font-size: 23px;
+  text-align: center;
+  display: block;
+}
+
+.topFive{
+  display: inline-block;
+}
+
+.top1{
+  width: 18%;
+}
+
+.top2{
+  width: 16%;
+}
+
+.top3{
+  width: 16%;
+}
+
+.top4{
+  width: 12%;
+}
+
+.top5{
+  width: 12%;
+}
+
+.topOtherContainer{
+  display: block;
+  text-align: center;
+  font-size: 23px;
+  margin-top: 5%;
+}
+
+.topOtherColumn{
+  display: inline-block;
+  text-align: left;
 }

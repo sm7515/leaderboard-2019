@@ -10,7 +10,6 @@ export default function Home(params) {
 
     const getPlayer=()=>axois.get('https://game-night-management.herokuapp.com/topplayers')
         .then(res=>{
-            console.log(res.data)
             setTopTen(res.data);
         })
         .catch(err=>console.log(err));
@@ -19,24 +18,32 @@ export default function Home(params) {
         getPlayer();
     },[])
 
-    const renderPlayer=()=>{
-        return topTen.map((player, index) => {
-            if(index<5){
-                return <DisplayTopFivePlayer
-                    key={index}
-                    nickname={player.nickname}
-                    score={player.chips}
-                />
-            }
-            else{
-                return <DisplayOtherFivePlayer
-                    rank={index + 1}
-                    key={index}
-                    nickname={player.nickname}
-                    score={player.chips}
-                />
-            }
+    const renderTopFivePlayer=()=>{
+        if (topTen.length !== 10) {
+            return (
+                <div className="topFiveContainer"></div>
+            )
+        }
+        return (
+            <div className="topFiveContainer">
+                <DisplayTopFivePlayer rank={5} players={topTen}/>
+                <DisplayTopFivePlayer rank={3} players={topTen}/>
+                <DisplayTopFivePlayer rank={1} players={topTen}/>
+                <DisplayTopFivePlayer rank={2} players={topTen}/>
+                <DisplayTopFivePlayer rank={4} players={topTen}/>
+            </div>
+        )
+    }
 
+    const renderOtherPlayer=()=>{
+        console.log(topTen);
+        return topTen.slice(5, 10).map((player, index) => {
+            return <DisplayOtherFivePlayer
+                key={index}
+                rank={index + 6}
+                nickname={player.nickname}
+                score={player.chips}
+            />
         })
     }
     
@@ -45,7 +52,16 @@ export default function Home(params) {
             <video className="background-video" muted loop autoPlay>
                 <source src={bgvideo} type="video/mp4" />
             </video>
-            {renderPlayer()}
+            <div className="players playerInfo">
+                {renderTopFivePlayer()}
+                <div className="topOtherContainer">
+                    <table className="topOtherColumn">
+                        <tbody>
+                            {renderOtherPlayer()}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     )
 }
