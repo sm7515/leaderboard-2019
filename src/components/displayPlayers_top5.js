@@ -27,8 +27,8 @@ export default function DisplayTopFivePlayer({rank, players,src}) {
         <div className={'topFive top' + rank}>
             <img className={`card ${rankS}`} src={src} alt=""></img>
             <span className={"rank"}>{rankS}</span>
-                <span className={"nickname"}>{players[rank-1].nickname}</span>
-                <span className={"score"}>{players[rank-1].chips}</span>
+            <span className={"nickname"}>{players[rank-1].nickname}</span>
+            <span className={"score"}>{players[rank-1].chips}</span>
         </div>
     )
 }
