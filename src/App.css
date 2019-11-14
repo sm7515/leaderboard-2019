@@ -35,10 +35,10 @@
 }
 
 .Queen{
-  width: 15%;
+  width: 17%;
 }
 .Jack{
-  width: 17%;
+  width: 15%;
 }
 .King{
   width: 20%;
@@ -47,7 +47,7 @@
   width: 21%;
 }
 .Joker{
-  width: 35%;
+  width: 32%;
 }
 
 .players{
