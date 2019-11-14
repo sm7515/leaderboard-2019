@@ -83,8 +83,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 1s linear infinite;
-  animation: showup 2s ease-in-out; 
+  animation: shine 1s linear infinite,  showup 2s ease-in-out; 
   font-weight:bold;
   margin-top: -20px;
   margin-bottom: 10px;
