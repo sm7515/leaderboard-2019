@@ -1,26 +1,28 @@
-/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Oranienbaum&display=swap');
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap');
+
 *,*::before,*::after{
   box-sizing:border-box;
 }
 
-body{
+/* body{
   overflow-x: hidden;
   overflow-y: hidden;
-}
+} */
 
 .container{
   display: block;
   align-items: center;
   justify-content: center;
   font-family: 'Bodoni MT', serif;
+  margin-top: -20px;
 }
 
 .background-video{
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
+  min-height: 100%;
   /* z-index: -100; */
   object-fit: cover;
   object-position: center;
@@ -28,27 +30,13 @@ body{
 
 .card{
   width: 100%;
+  mix-blend-mode: lighten;
+  animation: showup 2s ease-in-out; 
 }
 
 .JOKER{
   width: 150%;
 }
-
-/* .QUEEN{
-  width: 17%;
-}
-.JACK{
-  width: 15%;
-}
-.KING{
-  width: 20%;
-}
-.ACE{
-  width: 21%;
-}
-.JOKER,.ACE{
-  width: 32%;
-} */
 
 .players{
   background-color: black;
@@ -57,10 +45,12 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: showup 2s ease-in-out; 
   white-space: nowrap;
-  mix-blend-mode: lighten;
   width: 100vw;
+}
+
+.rank,.nickname,.score{
+  animation: showup 2s ease-in-out; 
 }
 
 @keyframes showup {
@@ -73,11 +63,28 @@ body{
 }
 
 .playerInfo{
-  color: white;
+  color: #D3B86A;
+}
+
+.topFive .nickname{
+  padding: 5px 20px;
+}
+
+.otherFive .nickname{
+  padding: 0 50px;
+  font-size: 30px;
 }
 
 .nickname,.rank{
   font-size: 30px;
+}
+
+.nickname{
+  font-family:  'ZCOOL XiaoWei', serif;
+}
+
+.topFive .nickname{
+  font-size: 40px;
 }
 
 .topFive .rank{
@@ -89,7 +96,10 @@ body{
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  animation: shine 1s linear infinite;
+  font-weight:bold;
+  margin-top: -20px;
+  letter-spacing: 2px;
 }
 
 @keyframes shine {
@@ -98,8 +108,8 @@ body{
   }
 }
 
-.score{
-  font-size: 30px;
+.top1 .rank{
+  margin-top: -40px;
 }
 
 .topFiveContainer{
@@ -123,20 +133,56 @@ body{
   width: 18%;
 }
 
+.top1 .nickname, .top1 .score{
+  opacity: 95%;
+}
+
 .top2{
-  width: 18%;
+  width: 20%;
+}
+
+.top2 .nickname, .top2 .score{
+  opacity: 90%;
+}
+
+.top2 .nickname{
+  font-size: 38px;
 }
 
 .top3{
   width: 18%;
 }
 
+.top3 .nickname, .top3 .score{
+  opacity: 85%;
+}
+
+.top3 .nickname{
+  font-size: 35px;
+}
+
 .top4{
-  width: 12%;
+  width: 15%;
+}
+
+.top4 .nickname{
+  font-size: 32px;
+}
+
+.top4 .nickname, .top4 .score{
+  opacity: 80%;
 }
 
 .top5{
   width: 12%;
+}
+
+.top5 .nickname, .top5 .score{
+  opacity: 75%;
+}
+
+.top5 .nickname{
+  font-size: 30px;
 }
 
 .topOtherContainer{
@@ -146,12 +192,61 @@ body{
   justify-content: center;
   font-size: 30px;
   position: relative;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 .otherFive{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 40px;
+  width: 100%;
+  color:white;
+  border: 1px solid transparent;
+  border-image: linear-gradient(-45deg, #C7BD88, #A0823A) 1;
+  position: relative;
+}
+
+.borderClass{
+  width: 100%;
+  padding:3px 3px;
+  border: 2px solid  transparent;
+  border-image: linear-gradient(45deg, #C7BD88, #645F37) 1;
+  margin-bottom: 10px;
+}
+
+.otherFive .nickname, .otherFive .score, .otherFive .rank{
+  opacity: 70%;
+}
+
+.otherFive .rank{
+  color: white;
+}
+
+.score{
+  font-size: 28px;
+  color: white;
+}
+
+.otherFive .rank{
+  font-family: 'Oranienbaum', serif;
+  background: linear-gradient(to right, #C7BD88, #A0823A 40%, #A0823A 60%, #C7BD88);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+  font-weight:bold;
+  letter-spacing: 2px;
+}
+
+p{
+  z-index: 1;
+  color:white;
+  position: absolute;
+  left: 10px;
+  bottom: 0;
 }

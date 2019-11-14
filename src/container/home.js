@@ -29,7 +29,7 @@ export default function Home(params) {
             <div className="topFiveContainer">
                 <DisplayTopFivePlayer rank={5} players={topTen} src={process.env.PUBLIC_URL + '/visuals/J.jpg'}/>
                 <DisplayTopFivePlayer rank={3} players={topTen} src={process.env.PUBLIC_URL + '/visuals/K.jpg'}/>
-                <DisplayTopFivePlayer rank={1} players={topTen} src={process.env.PUBLIC_URL + '/visuals/joker.jpeg'}/>
+                <DisplayTopFivePlayer rank={1} players={topTen} src={process.env.PUBLIC_URL + '/visuals/Joker.gif'}/>
                 <DisplayTopFivePlayer rank={2} players={topTen} src={process.env.PUBLIC_URL + '/visuals/A.png'}/>
                 <DisplayTopFivePlayer rank={4} players={topTen} src={process.env.PUBLIC_URL + '/visuals/Q.jpg'}/>
             </div>
@@ -58,6 +58,7 @@ export default function Home(params) {
                 <div className="topOtherContainer">
                     {renderOtherPlayer()}
                 </div>
+                <p>注：排名参考德州扑克</p>
             </div>
         </div>
     )
