@@ -49,17 +49,20 @@ export default function Home(params) {
 
     return(
         <div className='container'>
-            <video className="background-video" muted loop autoPlay>
-                <source src={process.env.PUBLIC_URL + '/visuals/gameboard_bg.mp4'} type="video/mp4" />
+            <video poster={process.env.PUBLIC_URL + '/visuals/Background.mp4'} className="background-video" playsInline muted loop autoPlay>
+                <source src={process.env.PUBLIC_URL + '/visuals/Background.mp4'} type="video/mp4" />
             </video>
+            <div className='cards'>
+                <img className='card Jack' src={process.env.PUBLIC_URL + '/visuals/J.jpg'}></img>
+                <img className='card King' src={process.env.PUBLIC_URL + '/visuals/K.jpg'}></img>
+                <img className='card Joker' src={process.env.PUBLIC_URL + '/visuals/joker.jpeg'}></img>
+                <img className='card Ace' src={process.env.PUBLIC_URL + '/visuals/A.png'}></img>
+                <img className='card Queen' src={process.env.PUBLIC_URL + '/visuals/Q.jpg'}></img>
+            </div>
             <div className="players playerInfo">
                 {renderTopFivePlayer()}
                 <div className="topOtherContainer">
-                    <table className="topOtherColumn">
-                        <tbody>
-                            {renderOtherPlayer()}
-                        </tbody>
-                    </table>
+                    {renderOtherPlayer()}
                 </div>
             </div>
         </div>
