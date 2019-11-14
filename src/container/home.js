@@ -27,11 +27,11 @@ export default function Home(params) {
         }
         return (
             <div className="topFiveContainer">
-                <DisplayTopFivePlayer rank={5} players={topTen}/>
-                <DisplayTopFivePlayer rank={3} players={topTen}/>
-                <DisplayTopFivePlayer rank={1} players={topTen}/>
-                <DisplayTopFivePlayer rank={2} players={topTen}/>
-                <DisplayTopFivePlayer rank={4} players={topTen}/>
+                <DisplayTopFivePlayer rank={5} players={topTen} src={process.env.PUBLIC_URL + '/visuals/J.jpg'}/>
+                <DisplayTopFivePlayer rank={3} players={topTen} src={process.env.PUBLIC_URL + '/visuals/K.jpg'}/>
+                <DisplayTopFivePlayer rank={1} players={topTen} src={process.env.PUBLIC_URL + '/visuals/joker.jpeg'}/>
+                <DisplayTopFivePlayer rank={2} players={topTen} src={process.env.PUBLIC_URL + '/visuals/A.png'}/>
+                <DisplayTopFivePlayer rank={4} players={topTen} src={process.env.PUBLIC_URL + '/visuals/Q.jpg'}/>
             </div>
         )
     }
@@ -52,13 +52,7 @@ export default function Home(params) {
             <video poster={process.env.PUBLIC_URL + '/visuals/Background.mp4'} className="background-video" playsInline muted loop autoPlay>
                 <source src={process.env.PUBLIC_URL + '/visuals/Background.mp4'} type="video/mp4" />
             </video>
-            <div className='cards'>
-                <img className='card Jack' src={process.env.PUBLIC_URL + '/visuals/J.jpg'}></img>
-                <img className='card King' src={process.env.PUBLIC_URL + '/visuals/K.jpg'}></img>
-                <img className='card Joker' src={process.env.PUBLIC_URL + '/visuals/joker.jpeg'}></img>
-                <img className='card Ace' src={process.env.PUBLIC_URL + '/visuals/A.png'}></img>
-                <img className='card Queen' src={process.env.PUBLIC_URL + '/visuals/Q.jpg'}></img>
-            </div>
+
             <div className="players playerInfo">
                 {renderTopFivePlayer()}
                 <div className="topOtherContainer">

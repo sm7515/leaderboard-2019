@@ -1,23 +1,23 @@
 import React from 'react';
 
-export default function DisplayTopFivePlayer({rank, players}) {
+export default function DisplayTopFivePlayer({rank, players,src}) {
 
     let rankS="";
     switch (rank) {
         case 1:
-            rankS="Joker";
+            rankS="JOKER";
             break;
         case 2:
-            rankS = "Ace";
+            rankS = "ACE";
             break;
         case 3:
-            rankS = "King";
+            rankS = "KING";
             break;
         case 4:
-            rankS = "Queen";
+            rankS = "QUEEN";
             break;
         case 5:
-            rankS = "Jack";
+            rankS = "JACK";
             break;
         default:
             break;
@@ -25,6 +25,7 @@ export default function DisplayTopFivePlayer({rank, players}) {
 
     return(
         <div className={'topFive top' + rank}>
+            <img className={`card ${rankS}`} src={src} alt=""></img>
             <span className={"rank"}>{rankS}</span>
             <span className={"nickname"}>{players[rank-1].nickname}</span>
             <span className={"score"}>{players[rank-1].chips}</span>
