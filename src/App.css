@@ -16,7 +16,6 @@
   justify-content: center;
   font-family: 'Bodoni MT', serif;
   margin-top: -20px;
-  animation: showup 2s ease-in-out; 
 }
 
 .background-video{
@@ -31,7 +30,7 @@
 
 .card{
   width: 100%;
-  z-index: 1;
+  /* z-index: 1; */
   mix-blend-mode: lighten;
   animation: showup 2s ease-in-out; 
 }
@@ -85,6 +84,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 1s linear infinite;
+  animation: showup 2s ease-in-out; 
   font-weight:bold;
   margin-top: -20px;
   letter-spacing: 2px;
@@ -195,6 +195,11 @@
   border: 1px solid transparent;
   border-image: linear-gradient(-45deg, #C7BD88, #A0823A) 1;
   position: relative;
+  animation: showup2 2s linear infinite;
+}
+
+.topFive .nickname, .otherFive  .nickname,.score{
+  animation: showup 2s linear infinite;
 }
 
 .borderClass{
