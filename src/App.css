@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Oranienbaum&display=swap');
 *,*::before,*::after{
   box-sizing:border-box;
 }
@@ -76,6 +78,24 @@ body{
 
 .nickname,.rank{
   font-size: 30px;
+}
+
+.topFive .rank{
+  font-family: 'Oranienbaum', serif;
+  background: linear-gradient(to right, rgb(209, 196, 155) 20%, #D3B86A 40%, #D3B86A 60%, rgb(209, 196, 144) 100%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .score{
