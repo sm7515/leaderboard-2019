@@ -12,4 +12,5 @@ A leaderboard for NYU CSSA (Chinese Students and Scholars Association)'s annual 
 
 
 ![](leaderboard-demo.gif)
+
 link: https://game-night-leaderboard.herokuapp.com/
